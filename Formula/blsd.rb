@@ -15,6 +15,7 @@ class Blsd < Formula
 
   def install
     ENV["GOPATH"] = buildpath
+    ENV["GO111MODULE"] = "auto"
     Language::Go.stage_deps resources, buildpath/"src"
 
     cd buildpath/"src/github.com/libgit2/git2go" do
